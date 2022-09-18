@@ -5,7 +5,7 @@ using Distributed ##Add distributed package to enable parallel processing
 addprocs(2) #State the number of processes to run
 @everywhere using Pkg;Pkg.add(["Plots","Parameters"]) #Add other relevant packages
 @everywhere using Parameters, Plots
-@everywhere include("f22stochasticmodelparallel.jl") #import the functions that solve our growth model
+@everywhere include("f22stochasticmodelparallel2.jl") #import the functions that solve our growth model
 
 @everywhere @time prim, res = Initialize() #initialize primitive and results structs
 @everywhere @time Solve_model(prim, res) #solve the model!
